@@ -10,6 +10,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+
     }
     buildTypes {
         release {
@@ -19,6 +22,10 @@ android {
     }
 }
 
+ext {
+    supportLibVersion = '25.1.1'  // variable that can be referenced to keep support libs consistent
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -26,4 +33,15 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
     testCompile 'junit:junit:4.12'
+
+    // Design Library:
+    compile "com.android.support:design:25.2.0"
+
+    // Transitions Library:
+    compile "com.android.support:transition:25"
+
+    // Recycler View:
+    compile "com.android.support:recyclerview-v7:25"
+
+
 }
