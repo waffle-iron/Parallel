@@ -3,17 +3,17 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="@dimen/activity_start_fragment_height"
-              >
+    >
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/fragment_login_edittext_username"
+            android:id="@+id/fragment_login_createaccount_edittext_username"
             android:layout_width="match_parent"
             android:layout_height="@dimen/activity_start_edittext_height"
-            android:hint="Email Address"
+            android:hint="Enter an email address"
             android:gravity="center_vertical"
             android:inputType="textWebEmailAddress"
             />
@@ -24,28 +24,20 @@
         android:layout_height="wrap_content">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/fragment_login_edittext_password"
+            android:id="@+id/fragment_login_createaccount_edittext_password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/activity_start_edittext_height"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="Enter a password"
+            android:inputType="textVisiblePassword"
+            android:gravity="center_vertical"
             />
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/fragment_login_button_login"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_start_edittext_height"
-        android:text="Login"
-        android:onClick="onClicktoActivityMain"
-        />
-
-    <Button
-        android:id="@+id/fragment_login_button_createaccount"
+        android:id="@+id/fragment_login_createaccount_button_createaccount"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_start_edittext_height"
         android:text="Create Account"
-        android:onClick="onClicktoCreateAccount"
         />
 
 

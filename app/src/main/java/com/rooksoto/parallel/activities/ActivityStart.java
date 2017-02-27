@@ -1,15 +1,11 @@
 package com.rooksoto.parallel.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.rooksoto.parallel.R;
-import com.rooksoto.parallel.fragments.FragmentStartCreateAccount;
-import com.rooksoto.parallel.fragments.FragmentStartLogin;
-import com.rooksoto.parallel.fragments.FragmentStartSplash;
+import com.rooksoto.parallel.fragments.activityStart.FragmentStartQuestions;
+import com.rooksoto.parallel.fragments.activityStart.FragmentStartWelcome;
 import com.rooksoto.parallel.utility.CustomAlertDialog;
 import com.rooksoto.parallel.utility.CustomSoundEffects;
 
@@ -23,61 +19,30 @@ public class ActivityStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         initialize();
-
-        loadFragmentSplash();
+        loadFragmentWelcome();
     }
 
     private void initialize () {
         mCustomSoundEffects = new CustomSoundEffects(getWindow().getDecorView().getRootView());
     }
 
-    private void loadFragmentSplash () {
-        FragmentStartSplash mFragmentStartSplash = new FragmentStartSplash();
+    private void loadFragmentWelcome () {
+        FragmentStartWelcome mFragmentStartWelcome = new FragmentStartWelcome();
         getSupportFragmentManager().beginTransaction()
-                .replace(containerID, mFragmentStartSplash)
+                .replace(containerID, mFragmentStartWelcome)
                 .commit();
     }
 
-    private void loadFragmentLogin () {
-        FragmentStartLogin mFragmentStartLogin = new FragmentStartLogin();
+    private void loadFragmentQuestions () {
+        FragmentStartQuestions mFragmentStartQuestions = new FragmentStartQuestions();
         getSupportFragmentManager().beginTransaction()
-                .replace(containerID, mFragmentStartLogin)
+                .replace(containerID, mFragmentStartQuestions)
                 .commit();
-    }
-
-    private void loadFragmentCreateAccount () {
-        FragmentStartCreateAccount mFragmentStartCreateAccount = new FragmentStartCreateAccount();
-        getSupportFragmentManager().beginTransaction()
-                .replace(containerID, mFragmentStartCreateAccount)
-                .commit();
-    }
-
-    public void onClickToLogin (View view) {
-        mCustomSoundEffects.setDefaultClick();
-        loadFragmentLogin();
-    }
-
-    public void onClicktoCreateAccount (View view) {
-        mCustomSoundEffects.setDefaultClick();
-        loadFragmentCreateAccount();
-    }
-
-    public void onClicktoActivityMain (View view) {
-        mCustomSoundEffects.setDefaultClick();
-        Intent fromActivityStartToActivityMain = new Intent(this, ActivityMain.class);
-        startActivity(fromActivityStartToActivityMain);
-        finish();
     }
 
     @Override
     public void onBackPressed () {
-        Fragment currentFragment = getSupportFragmentManager().findFragmentById(containerID);
-        if (currentFragment instanceof FragmentStartLogin) {
-            mCustomAlertDialog.exit(this);
-        } else if (currentFragment instanceof FragmentStartCreateAccount) {
-            loadFragmentLogin();
-        } else {
-            super.onBackPressed();
-        }
+        mCustomAlertDialog.exit(this);
+        //super.onBackPressed();
     }
 }
