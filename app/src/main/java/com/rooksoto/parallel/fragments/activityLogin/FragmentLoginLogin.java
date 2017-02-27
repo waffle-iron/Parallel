@@ -1,4 +1,4 @@
-package com.rooksoto.parallel.fragments;
+package com.rooksoto.parallel.fragments.activityLogin;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.rooksoto.parallel.R;
 
-public class FragmentStartLogin extends Fragment {
+public class FragmentLoginLogin extends Fragment {
     private View mView;
     private String username;
     private String password;
@@ -18,14 +18,14 @@ public class FragmentStartLogin extends Fragment {
     @Nullable
     @Override
     public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_login, container, false);
+        mView = inflater.inflate(R.layout.fragment_login_login, container, false);
         initialize();
         return mView;
     }
 
     private void initialize () {
-        EditText editTextUsername = (EditText) mView.findViewById(R.id.fragment_login_edittext_username);
-        EditText editTextPassword = (EditText) mView.findViewById(R.id.fragment_login_edittext_password);
+        EditText editTextUsername = (EditText) mView.findViewById(R.id.fragment_login_login_edittext_username);
+        EditText editTextPassword = (EditText) mView.findViewById(R.id.fragment_login_login_edittext_password);
 
         username = editTextUsername.getText().toString();
         password = editTextPassword.getText().toString();

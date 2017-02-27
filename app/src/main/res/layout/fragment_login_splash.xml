@@ -7,7 +7,7 @@
     >
 
     <ImageView
-        android:id="@+id/fragment_splash_icon"
+        android:id="@+id/fragment_login_splash_icon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@android:drawable/btn_star"

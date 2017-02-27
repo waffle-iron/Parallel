@@ -7,14 +7,14 @@ import com.rooksoto.parallel.R;
 import com.rooksoto.parallel.utility.CustomAlertDialog;
 import com.rooksoto.parallel.utility.CustomSoundEffects;
 
-public class ActivityMain extends AppCompatActivity {
+public class ActivityHub extends AppCompatActivity {
     private CustomSoundEffects mCustomSoundEffects;
     private CustomAlertDialog mCustomAlertDialog = new CustomAlertDialog();
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_hub);
         initialize();
     }
 
