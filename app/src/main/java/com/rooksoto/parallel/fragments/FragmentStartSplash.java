@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.rooksoto.parallel.R;
 
-public class FragmentSplash extends Fragment {
+public class FragmentStartSplash extends Fragment {
     private View mView;
 
     @Nullable

@@ -5,4 +5,7 @@
 
     <!-- Activity Start -->
     <dimen name="activity_start_fragment_height">400dp</dimen>
+    <dimen name="activity_start_edittext_height">48dp</dimen>
+
+    <!-- Activity Main -->
 </resources>
