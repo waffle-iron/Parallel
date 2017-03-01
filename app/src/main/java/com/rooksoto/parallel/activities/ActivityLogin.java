@@ -1,6 +1,5 @@
 package com.rooksoto.parallel.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +9,7 @@ import com.rooksoto.parallel.R;
 import com.rooksoto.parallel.fragments.activityLogin.FragmentLoginCreateAccount;
 import com.rooksoto.parallel.fragments.activityLogin.FragmentLoginLogin;
 import com.rooksoto.parallel.fragments.activityLogin.FragmentLoginSplash;
+import com.rooksoto.parallel.fragments.activityLogin.FragmentLoginWait;
 import com.rooksoto.parallel.utility.CustomAlertDialog;
 import com.rooksoto.parallel.utility.CustomSoundEffects;
 
@@ -52,6 +52,13 @@ public class ActivityLogin extends AppCompatActivity {
                 .commit();
     }
 
+    private void loadFragmentWait () {
+        FragmentLoginWait mFragmentLoginWait = new FragmentLoginWait();
+        getSupportFragmentManager().beginTransaction()
+                .replace(containerID, mFragmentLoginWait)
+                .commit();
+    }
+
     public void onClickToLogin (View view) {
         mCustomSoundEffects.setDefaultClick();
         loadFragmentLogin();
@@ -62,17 +69,15 @@ public class ActivityLogin extends AppCompatActivity {
         loadFragmentCreateAccount();
     }
 
-    public void onClicktoActivityMain (View view) {
+    public void onClicktoWait (View view) {
         mCustomSoundEffects.setDefaultClick();
-        Intent fromActivityStartToActivityMain = new Intent(this, ActivityStart.class);
-        startActivity(fromActivityStartToActivityMain);
-        finish();
+        loadFragmentWait();
     }
 
     @Override
     public void onBackPressed () {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(containerID);
-        if (currentFragment instanceof FragmentLoginLogin) {
+        if (currentFragment instanceof FragmentLoginLogin || currentFragment instanceof FragmentLoginWait) {
             mCustomAlertDialog.exit(this);
         } else if (currentFragment instanceof FragmentLoginCreateAccount) {
             loadFragmentLogin();

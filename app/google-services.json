@@ -1,0 +1,42 @@
+{
+    "project_info": {
+        "project_number": "559680315624",
+        "firebase_url": "https://parallel-651c4.firebaseio.com",
+        "project_id": "parallel-651c4",
+        "storage_bucket": "parallel-651c4.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:559680315624:android:3f9284b7dd0d30ba",
+                "android_client_info": {
+                    "package_name": "com.rooksoto.parallel"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "559680315624-7gfrhn8iq0mf666nb998mksqnvppp4c7.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBaUhI8iK2GJfYi7_mjPGo4vSm-PV-7VBc"
+                }
+            ],
+            "services": {
+                "analytics_service": {
+                    "status": 1
+                },
+                "appinvite_service": {
+                    "status": 1,
+                    "other_platform_oauth_client": []
+                },
+                "ads_service": {
+                    "status": 2
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

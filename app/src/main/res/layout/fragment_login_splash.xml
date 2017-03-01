@@ -4,13 +4,15 @@
               android:layout_width="match_parent"
               android:layout_height="@dimen/activity_start_fragment_height"
               android:onClick="onClickToLogin"
+              android:gravity="center"
     >
 
     <ImageView
         android:id="@+id/fragment_login_splash_icon"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@android:drawable/btn_star"
+        android:layout_width="@dimen/activity_start_edittext_width"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logofinalfull"
+        android:tint="#f9f9f9"
         />
 
 </LinearLayout>
