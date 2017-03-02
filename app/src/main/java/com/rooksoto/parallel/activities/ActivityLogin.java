@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.rooksoto.parallel.R;
 import com.rooksoto.parallel.fragments.activityLogin.FragmentLoginCreateAccount;
@@ -20,6 +23,7 @@ public class ActivityLogin extends AppCompatActivity {
     private CustomSoundEffects mCustomSoundEffects;
     private CustomAlertDialog mCustomAlertDialog = new CustomAlertDialog();
     private CustomToast mCustomToast = new CustomToast();
+    private ImageView logoView;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -47,6 +51,12 @@ public class ActivityLogin extends AppCompatActivity {
                 .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left)
                 .replace(containerID, mFragmentLoginLogin, "Login")
                 .commit();
+        logoView = (ImageView) findViewById(R.id.activity_login_logo);
+        logoView.setVisibility(View.VISIBLE);
+
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.alphainleft);
+        logoView.startAnimation(fadeIn);
+
     }
 
     private void loadFragmentCreateAccount () {
@@ -63,6 +73,7 @@ public class ActivityLogin extends AppCompatActivity {
                 .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left)
                 .replace(containerID, mFragmentLoginWait)
                 .commit();
+        logoView.setVisibility(View.INVISIBLE);
     }
 
     public void onClickToLogin (View view) {

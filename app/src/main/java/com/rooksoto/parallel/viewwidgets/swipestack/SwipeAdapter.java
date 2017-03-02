@@ -11,9 +11,9 @@ import com.rooksoto.parallel.network.objects.Questions;
 import java.util.List;
 
 public class SwipeAdapter extends BaseAdapter {
-    private List<Questions> listOfQuestions;
+    private List <Questions> listOfQuestions;
 
-    public SwipeAdapter(List<Questions> listParam){
+    public SwipeAdapter (List <Questions> listParam) {
         this.listOfQuestions = listParam;
     }
 
