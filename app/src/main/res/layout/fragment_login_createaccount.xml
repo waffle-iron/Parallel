@@ -24,6 +24,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
         >
 
         <android.support.design.widget.TextInputEditText
@@ -35,12 +36,15 @@
             android:inputType="textWebEmailAddress"
             android:theme="@style/TextLabel"
             android:typeface="sans"
+            android:textColor="@color/textAlt"
             />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        >
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/fragment_login_createaccount_edittext_username"
@@ -51,12 +55,15 @@
             android:inputType="textWebEmailAddress"
             android:theme="@style/TextLabel"
             android:typeface="sans"
+            android:textColor="@color/textAlt"
             />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        >
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/fragment_login_createaccount_edittext_password"
@@ -67,6 +74,7 @@
             android:gravity="center_vertical"
             android:theme="@style/TextLabel"
             android:typeface="sans"
+            android:textColor="@color/textAlt"
             />
     </android.support.design.widget.TextInputLayout>
 

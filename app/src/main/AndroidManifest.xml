@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -22,14 +24,16 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".activities.ActivityStart"
-            android:screenOrientation="portrait">
+        <activity android:name=".activities.ActivityStart"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"
+            >
         </activity>
-        <activity
-            android:name=".activities.ActivityHub"
-            android:screenOrientation="portrait"
-            android:theme="@style/ActivityLogin">
+
+        <activity android:name=".activities.ActivityHub"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"
+            >
         </activity>
     </application>
 

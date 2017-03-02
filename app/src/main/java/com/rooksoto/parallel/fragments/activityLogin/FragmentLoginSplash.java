@@ -33,7 +33,7 @@ public class FragmentLoginSplash extends Fragment {
         return mView;
     }
 
-    private void splashPostLineAnimation(){
+    private void splashPostLineAnimation () {
         parallelLineLeft2 = (ImageView) mView.findViewById(R.id.fragment_login_splash_lineleft2);
         parallelLineRight2 = (ImageView) mView.findViewById(R.id.fragment_login_splash_lineright2);
         parallelLineLeft2.setVisibility(View.VISIBLE);
@@ -67,7 +67,7 @@ public class FragmentLoginSplash extends Fragment {
         setRightIn.start();
     }
 
-    private void splashLineAnimation(){
+    private void splashLineAnimation () {
         parallelLineLeft = (ImageView) mView.findViewById(R.id.fragment_login_splash_lineleft);
         parallelLineRight = (ImageView) mView.findViewById(R.id.fragment_login_splash_lineright);
         parallelLineLeft.setVisibility(View.VISIBLE);
@@ -76,38 +76,50 @@ public class FragmentLoginSplash extends Fragment {
         Animation accelerateUp = AnimationUtils.loadAnimation(mView.getContext(), R.anim.accelerateup);
         accelerateUp.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart (Animation animation) {}
+            public void onAnimationStart (Animation animation) {
+            }
+
             @Override
             public void onAnimationEnd (Animation animation) {
                 Animation slowDown = AnimationUtils.loadAnimation(mView.getContext(), R.anim.slowdown);
                 slowDown.setAnimationListener(new Animation.AnimationListener() {
                     @Override
-                    public void onAnimationStart (Animation animation) {}
+                    public void onAnimationStart (Animation animation) {
+                    }
+
                     @Override
                     public void onAnimationEnd (Animation animation) {
                         splashWordAnimation();
                     }
+
                     @Override
-                    public void onAnimationRepeat (Animation animation) {}
+                    public void onAnimationRepeat (Animation animation) {
+                    }
                 });
                 parallelLineRight.startAnimation(slowDown);
             }
+
             @Override
-            public void onAnimationRepeat (Animation animation) {}
+            public void onAnimationRepeat (Animation animation) {
+            }
         });
         parallelLineRight.startAnimation(accelerateUp);
 
         Animation accelerateDown = AnimationUtils.loadAnimation(mView.getContext(), R.anim.acceleratedown);
         accelerateDown.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart (Animation animation) {}
+            public void onAnimationStart (Animation animation) {
+            }
+
             @Override
             public void onAnimationEnd (Animation animation) {
                 Animation slowUp = AnimationUtils.loadAnimation(mView.getContext(), R.anim.slowup);
                 parallelLineLeft.startAnimation(slowUp);
             }
+
             @Override
-            public void onAnimationRepeat (Animation animation) {}
+            public void onAnimationRepeat (Animation animation) {
+            }
         });
         parallelLineLeft.startAnimation(accelerateDown);
     }
