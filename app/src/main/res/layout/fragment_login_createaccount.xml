@@ -9,6 +9,8 @@
     <ImageView
         android:layout_width="@dimen/activity_start_edittext_width"
         android:layout_height="100dp"
+        android:src="@drawable/lines"
+        android:tint="#80f9f9f9"
         />
 
     <android.support.design.widget.TextInputLayout

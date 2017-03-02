@@ -7,10 +7,22 @@
               android:gravity="center"
     >
 
-    <ImageView
+    <FrameLayout
         android:layout_width="@dimen/activity_start_edittext_width"
-        android:layout_height="100dp"
-        />
+        android:layout_height="100dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/lineleft"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/lineright"
+            />
+
+    </FrameLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
@@ -48,6 +60,7 @@
         android:layout_height="@dimen/activity_start_edittext_height"
         android:text="Login"
         android:onClick="onClicktoWait"
+        android:textColor="@color/textMain"
         />
 
     <TextView
@@ -56,7 +69,7 @@
         android:text="Forgot your password?"
         android:textSize="12sp"
         android:gravity="center"
-        android:textColor="@color/activity_login_edittext_text"
+        android:textColor="@color/textAlt"
         />
 
     <LinearLayout
@@ -72,6 +85,7 @@
             android:layout_height="24dp"
             android:text="Don't have an account?"
             android:gravity="center"
+            android:textColor="@color/teal"
             />
 
         <TextView
@@ -82,7 +96,7 @@
             android:text=" Create one"
             android:onClick="onClicktoCreateAccount"
             android:gravity="center"
-            android:textColor="@color/activity_login_edittext_text"
+            android:textColor="@color/textMain"
             />
 
     </LinearLayout>

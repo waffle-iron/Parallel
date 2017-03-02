@@ -34,14 +34,14 @@ public class ActivityLogin extends AppCompatActivity {
     private void loadFragmentSplash () {
         FragmentLoginSplash mFragmentLoginSplash = new FragmentLoginSplash();
         getSupportFragmentManager().beginTransaction()
-                .replace(containerID, mFragmentLoginSplash)
+                .add(R.id.activity_login, mFragmentLoginSplash, "Splash")
                 .commit();
     }
 
     private void loadFragmentLogin () {
         FragmentLoginLogin mFragmentLoginLogin = new FragmentLoginLogin();
         getSupportFragmentManager().beginTransaction()
-                .replace(containerID, mFragmentLoginLogin)
+                .replace(containerID, mFragmentLoginLogin, "Login")
                 .commit();
     }
 
@@ -55,12 +55,15 @@ public class ActivityLogin extends AppCompatActivity {
     private void loadFragmentWait () {
         FragmentLoginWait mFragmentLoginWait = new FragmentLoginWait();
         getSupportFragmentManager().beginTransaction()
-                .replace(containerID, mFragmentLoginWait)
+                .replace(R.id.activity_login, mFragmentLoginWait)
                 .commit();
     }
 
     public void onClickToLogin (View view) {
         mCustomSoundEffects.setDefaultClick();
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag("Splash");
+        if(fragment != null)
+            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
         loadFragmentLogin();
     }
 
@@ -71,6 +74,10 @@ public class ActivityLogin extends AppCompatActivity {
 
     public void onClicktoWait (View view) {
         mCustomSoundEffects.setDefaultClick();
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag("Login");
+        if(fragment != null)
+            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
         loadFragmentWait();
     }
 

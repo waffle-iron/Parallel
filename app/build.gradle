@@ -73,6 +73,8 @@ dependencies {
     // Picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
 
+    // Swipe Stack:
+    compile 'link.fls:swipestack:0.3.0'
+
 
 }
-apply plugin: 'com.google.gms.google-services'

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Events {
     String name;
+    String venue;
     String address;
     String city;
     int zipcode;
@@ -12,6 +13,10 @@ public class Events {
 
     public String getName () {
         return name;
+    }
+
+    public String getVenue () {
+        return venue;
     }
 
     public String getAddress () {
@@ -36,6 +41,10 @@ public class Events {
 
     public void setName (String name) {
         this.name = name;
+    }
+
+    public void setVenue (String venue) {
+        this.venue = venue;
     }
 
     public void setAddress (String address) {
