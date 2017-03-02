@@ -2,7 +2,6 @@ package com.rooksoto.parallel.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.rooksoto.parallel.R;
 import com.rooksoto.parallel.fragments.activityHub.FragmentChat;
@@ -31,7 +30,6 @@ public class ActivityHub extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(containerID, fragmentChat)
                 .commit();
-        Toast.makeText(this, "Fragment Chat called", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -1,7 +1,9 @@
 package com.rooksoto.parallel.activities;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.rooksoto.parallel.R;
 import com.rooksoto.parallel.fragments.activityStart.FragmentStartQuestions;
@@ -42,7 +44,16 @@ public class ActivityStart extends AppCompatActivity {
 
     @Override
     public void onBackPressed () {
-        mCustomAlertDialog.exit(this);
-        //super.onBackPressed();
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(containerID);
+        if (currentFragment instanceof FragmentStartWelcome) {
+            mCustomAlertDialog.exit(this);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    public void onClickToQuestions (View view) {
+        mCustomSoundEffects.setDefaultClick();
+        loadFragmentQuestions();
     }
 }
