@@ -4,4 +4,19 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <link.fls.swipestack.SwipeStack
+            android:id="@+id/fragment_start_questions_swipestack_holder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_start_fragment_height">
+
+        </link.fls.swipestack.SwipeStack>
+
+    </FrameLayout>
+
+
 </LinearLayout>
