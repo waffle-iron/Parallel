@@ -60,7 +60,7 @@ public class ActivityHub extends AppCompatActivity {
     private void startLocationServices() {
         locationService = ParallelLocation.getInstance();
         locationService.connect();
-        locationService.startGeofenceMonitoring();
+        locationService.startGeofenceMonitoring(getApplicationContext());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

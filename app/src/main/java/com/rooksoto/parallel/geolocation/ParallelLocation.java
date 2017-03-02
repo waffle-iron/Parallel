@@ -1,6 +1,7 @@
 package com.rooksoto.parallel.geolocation;
 
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.rooksoto.parallel.utility.AppContext;
 
 import java.util.ArrayList;
 
@@ -43,8 +45,8 @@ public class ParallelLocation {
     }
 
     private ParallelLocation() {
-
-        googleApiClient = new GoogleApiClient.Builder(googleApiClient.getContext()) // FIXME: 3/2/17 - googleApiClient.getContext() may return null;
+        Context context = AppContext.getAppContext();
+        googleApiClient = new GoogleApiClient.Builder(context) // FIXME: 3/2/17 - googleApiClient.getContext() may return null;
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
                     @Override
@@ -100,7 +102,7 @@ public class ParallelLocation {
 
     }
 
-    public void startGeofenceMonitoring() {
+    public void startGeofenceMonitoring(Context context) {
 
         Log.d(TAG, "startGeofenceMonitoring: Called");
 
@@ -116,9 +118,9 @@ public class ParallelLocation {
                     .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
                     .addGeofence(geofence)
                     .build();
-            Intent intent = new Intent(googleApiClient.getContext(), GeofenceService.class);
+            Intent intent = new Intent(context, GeofenceService.class);
             PendingIntent pendingIntent = PendingIntent.getService(
-                    googleApiClient.getContext(),
+                    context,
                     0,
                     intent,
                     PendingIntent.FLAG_UPDATE_CURRENT
