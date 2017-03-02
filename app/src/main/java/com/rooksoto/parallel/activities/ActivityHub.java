@@ -1,18 +1,16 @@
 package com.rooksoto.parallel.activities;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.rooksoto.parallel.R;
+import com.rooksoto.parallel.geolocation.ParallelLocation;
 import com.rooksoto.parallel.fragments.activityHub.FragmentChat;
 import com.rooksoto.parallel.utility.CustomAlertDialog;
 import com.rooksoto.parallel.utility.CustomSoundEffects;
@@ -23,6 +21,7 @@ public class ActivityHub extends AppCompatActivity {
     private CustomAlertDialog mCustomAlertDialog = new CustomAlertDialog();
 
     private static final String TAG = "ActivityHub";
+    ParallelLocation locationService = null;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -37,6 +36,15 @@ public class ActivityHub extends AppCompatActivity {
         super.onStart();
 
         checkForGoogleApiAvail();
+        if(Build.VERSION.SDK_INT >= 23) {
+            getLocationPermissions();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        startLocationServices();
     }
 
     private void checkForGoogleApiAvail() {
@@ -49,13 +57,10 @@ public class ActivityHub extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if(Build.VERSION.SDK_INT >= 23) {
-            getLocationPermissions();
-        }
+    private void startLocationServices() {
+        locationService = ParallelLocation.getInstance();
+        locationService.connect();
+        locationService.startGeofenceMonitoring();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

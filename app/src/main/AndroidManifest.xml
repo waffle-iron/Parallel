@@ -35,6 +35,7 @@
                   android:theme="@style/AppTheme"
             >
         </activity>
+        <service android:name=".geolocation.GeofenceService" android:exported="true" android:enabled="true"/>
     </application>
 
 </manifest>
