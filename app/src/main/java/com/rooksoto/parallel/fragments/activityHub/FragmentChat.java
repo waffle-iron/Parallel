@@ -73,6 +73,11 @@ public class FragmentChat extends Fragment {
         messageEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().trim().length() == 0) {
                     sendButton.setEnabled(false);
                 } else {
@@ -81,16 +86,12 @@ public class FragmentChat extends Fragment {
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
             public void afterTextChanged(Editable editable) {
 
             }
         });
     }
+
 
     private void createFirebaseListAdapter(final DatabaseReference ref) {
         messageListAdapter = new FirebaseListAdapter<Chat>(getActivity(), Chat.class, R.layout.item_message, ref) {
