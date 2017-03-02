@@ -24,13 +24,13 @@
 
     <style name="TextLabel" parent="TextAppearance.AppCompat">
         <!-- Text hint -->
-        <item name="android:textColorHint">@color/teal</item>
+        <item name="android:textColorHint">@color/textAlt</item>
         <!--Bottom line-->
         <item name="colorAccent">@color/peachLight</item>
         <!--Underline-->
-        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/teal</item>
         <!--Underline & text activated-->
-        <item name="colorControlActivated">@color/skyblue</item>
+        <item name="colorControlActivated">@color/gray10</item>
     </style>
 
 

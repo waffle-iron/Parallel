@@ -11,8 +11,8 @@ import com.rooksoto.parallel.network.objects.Events;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventsAdapter extends RecyclerView.Adapter{
-    List<Events> listofEvents = new ArrayList<>();
+public class EventsAdapter extends RecyclerView.Adapter {
+    List <Events> listofEvents = new ArrayList <>();
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder (ViewGroup parent, int viewType) {

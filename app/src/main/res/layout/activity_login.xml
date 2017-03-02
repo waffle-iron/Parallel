@@ -21,25 +21,25 @@
         >
 
         <ImageView
-            android:id="@+id/activity_start_logo"
+            android:id="@+id/activity_login_logo"
             android:layout_width="50dp"
             android:layout_height="100dp"
             android:src="@drawable/lines"
             android:tint="#FFFFFF"
             android:layout_gravity="center"
             android:layout_marginBottom="140dp"
+            android:visibility="invisible"
             />
 
     </FrameLayout>
 
     <LinearLayout
         android:id="@+id/activity_login_fragment_container"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         >
-
-
 
     </LinearLayout>
 
