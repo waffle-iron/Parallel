@@ -69,6 +69,13 @@ public class ActivityLogin extends AppCompatActivity {
         finish();
     }
 
+    public void onClicktoActivityHub (View view) {
+        mCustomSoundEffects.setDefaultClick();
+        Intent fromActivityStartToActivityHub = new Intent(this, ActivityHub.class);
+        startActivity(fromActivityStartToActivityHub);
+        finish();
+    }
+
     @Override
     public void onBackPressed () {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(containerID);

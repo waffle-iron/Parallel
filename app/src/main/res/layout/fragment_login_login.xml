@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_start_edittext_height"
         android:text="Login"
-        android:onClick="onClicktoActivityMain"
+        android:onClick="onClicktoActivityHub"
         />
 
     <Button
