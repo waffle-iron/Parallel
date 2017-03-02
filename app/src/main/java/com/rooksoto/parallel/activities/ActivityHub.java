@@ -40,7 +40,7 @@ public class ActivityHub extends AppCompatActivity {
         int hasGpsInstalled = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
         if (hasGpsInstalled != ConnectionResult.SUCCESS) {
             Log.d(TAG, "Google API Not Available on This Device");
-            // TODO: 3/2/17 - Show "Get Google Play Services" dialog
+            GoogleApiAvailability.getInstance().getErrorDialog(this, hasGpsInstalled, 1).show();
         } else {
             Log.d(TAG, "Google API is Available");
         }
