@@ -6,14 +6,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.widget.Button;
 import android.widget.EditText;
 
+import com.labo.kaji.fragmentanimations.PushPullAnimation;
 import com.rooksoto.parallel.R;
 
 public class FragmentLoginCreateAccount extends Fragment {
     private View mView;
+    private Button buttonCreateAccount;
     private String username;
     private String password;
+
+    @Override
+    public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
+        return PushPullAnimation.create(PushPullAnimation.LEFT, enter, 250);
+    }
 
     @Nullable
     @Override
@@ -29,5 +38,6 @@ public class FragmentLoginCreateAccount extends Fragment {
 
         username = editTextUsername.getText().toString();
         password = editTextPassword.getText().toString();
+
     }
 }

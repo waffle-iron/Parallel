@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.rooksoto.parallel.activities.ActivityLogin"
     android:gravity="center"
+    android:background="@drawable/uibackground1"
+
     >
 
     <FrameLayout
