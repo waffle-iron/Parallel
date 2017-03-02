@@ -2,24 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:onClick="onClickToQuestions"
-    >
+              android:layout_height="200dp">
 
     <TextView
+        android:id="@+id/fragment_start_questions_swipestack_textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Welcome"
+        android:text="Yo"
         android:textSize="144sp"
         />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
 </LinearLayout>

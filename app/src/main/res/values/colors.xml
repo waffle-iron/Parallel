@@ -21,4 +21,6 @@
 
     <color name="activity_login_edittext_hint">#80f9f9f9</color>
 
+    <color name="transparent">#00000000</color>
+
 </resources>
